@@ -7,8 +7,8 @@ import { ReduxPromise } from 'redux-promise';
 import App from './components/app';
 import reducers from './reducers';
 
-//Hook in ReduxPromise into our application.
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+//Hook in ReduxPromise into our application. Resolves our promises.
+const createStoreWithMiddleware = applyMiddleware()(createStore, ReduxPromise);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
