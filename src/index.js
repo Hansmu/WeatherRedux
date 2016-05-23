@@ -8,6 +8,7 @@ import App from './components/app';
 import reducers from './reducers';
 
 //Hook in ReduxPromise into our application. Resolves our promises.
+//After action creators create actions, the actions flow into middleware.
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
