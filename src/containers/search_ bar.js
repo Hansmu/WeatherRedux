@@ -15,10 +15,15 @@ export default class SearchBar extends Component {
         });
     }
 
+    onFormSubmit(event) {
+        //Should prevent submitting the form because we have a single page application. Shouldn't redirect.
+        event.preventDefault();
+    }
+
     render() {
         /*Input is a controlled field. Value of our element is set by the state, not the other way around.*/
         return(
-            <form className="input-group">
+            <form className="input-group" onSubmit={ this.onFormSubmit }>
                 <input
                     placeholder="Get a five-day forecast in your favourite cities"
                     className="form-control"
